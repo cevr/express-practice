@@ -33,7 +33,7 @@ let map = {};
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     if (req.headers.cookie) {
-        let cookies = parseCookies(req.headers.cookie);
+        const cookies = parseCookies(req.headers.cookie);
         map[cookies.SessionID] = 0;
 
         if (cookies.SessionID) {
